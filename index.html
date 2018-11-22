@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Demo</title>
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style type="text/css">
+
+
+		</style>
+	</head>
+	<body>
+		<div class="rbox">
+			<form id="registrationForm" action="" method="post">
+				<table border="0" cellpadding="4px" cellspacing="4px" width="250">
+					<thead>
+						<tr>
+							<th>Supply Registration Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<label for="sname">Surname:</label>
+								<input type="text" name="sname" id="sname" placeholder="Enter Surname" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="onames">Othernames:</label>
+								<input type="text" name="onames" id="onames" placeholder="Enter Othernames" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="paswd">Password:</label>
+								<input type="Password" name="paswd" id="paswd" placeholder="Enter Password" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="cpaswd">Confirm Password:</label>
+								<input type="Password" name="cpaswd" id="cpaswd" placeholder="Confirm Password" required>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p id="msg"></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="submit" id="btnSub">Create Account</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function (){
+			$("#cpaswd").keyup(function(e){
+				if($("#paswd").val() === $(this).val())
+				{
+					//$("#msg").html("<img src='img/success.png' width='16px' /> Passwords match!!");
+					$(this, "#paswd").css("border", "1px solid #0d0");
+				}
+				else
+				{
+					//$("#msg").html("Passwords do not match!!");
+					$(this, "#paswd").css("border", "1px solid #d00");
+				}
+			});
+		});
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
